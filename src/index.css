@@ -88,3 +88,13 @@ input:focus { outline: none; border-color: var(--teal); }
 .center .stars { display: flex; justify-content: center; margin-bottom: 8px; }
 .logo-bolt { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: var(--sun); color: #12303a; box-shadow: 0 4px 14px rgba(255, 200, 61, 0.5); }
 .btn .icon { margin-right: 4px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; font-weight: 600; }
+.hint { font-weight: 400; font-size: 0.8rem; }
+.hint.bad { color: var(--red); }
+.pass-row { display: flex; gap: 8px; align-items: center; }
+.pass-row input { flex: 1; }
+.rules { list-style: none; margin: 0; padding: 10px 12px; background: #f4fbfd; border-radius: 12px; display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: #5b7480; }
+.rules li { display: flex; align-items: center; gap: 8px; }
+.rules li.ok { color: var(--green); }
+.rules .dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #b9c7cd; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.rules li.ok .dot { background: var(--green); border-color: var(--green); color: #fff; }
