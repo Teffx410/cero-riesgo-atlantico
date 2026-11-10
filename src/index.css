@@ -98,3 +98,24 @@ input:focus { outline: none; border-color: var(--teal); }
 .rules li.ok { color: var(--green); }
 .rules .dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #b9c7cd; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .rules li.ok .dot { background: var(--green); border-color: var(--green); color: #fff; }
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+#root > .app { width: 100%; }
+.site-footer { margin-top: auto; background: #12303a; color: #d7eef3; font-size: 0.85rem; border-top: 4px solid var(--sun); }
+.footer-inner { max-width: 960px; margin: 0 auto; padding: 14px 16px 8px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand strong { display: block; color: #fff; }
+.footer-brand small { color: #9fc6cf; }
+.footer-logo { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--sun); color: #12303a; flex-shrink: 0; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
+.footer-links button, .footer-links a { background: none; border: 0; padding: 4px 0; color: #d7eef3; font: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.footer-links button:hover, .footer-links a:hover { color: var(--sun); text-decoration: underline; }
+.footer-copy { max-width: 960px; margin: 0 auto; padding: 0 16px 12px; color: #7fa6b0; font-size: 0.75rem; }
+.info-dialog { border: 0; border-radius: 16px; padding: 0; width: min(520px, calc(100vw - 32px)); max-height: 80vh; color: #12303a; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+.info-dialog::backdrop { background: rgba(18, 48, 58, 0.55); }
+.info-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.info-body p { margin: 0; line-height: 1.45; }
+.plain-list { margin: 0; padding-left: 20px; }
+.faq details { border-bottom: 1px solid #e1eef1; padding: 8px 0; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq details p { margin-top: 6px; color: #3e5a64; }
+.insta-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; align-self: flex-start; background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888); }

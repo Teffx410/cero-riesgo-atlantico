@@ -1,6 +1,7 @@
 import { ALL_SCENARIOS } from '../content'
 import type { ScenarioProgress } from '../types'
 import Icon, { Fuse, ScenarioBadge, Stars } from '../components/Icon'
+import Footer from '../components/Footer'
 
 interface Props {
   userName: string
@@ -20,6 +21,7 @@ export default function Home({ userName, progress, hasPostest, notice, onPlay, o
   const totalStars = progress.reduce((sum, p) => sum + p.stars, 0)
 
   return (
+    <>
     <div className="app">
       <div className="row between">
         <h2 className="title-row">
@@ -71,5 +73,7 @@ export default function Home({ userName, progress, hasPostest, notice, onPlay, o
         {hasPostest && <button className="btn" onClick={onResults}>Ver mis resultados y diploma</button>}
       </div>
     </div>
+    <Footer />
+    </>
   )
 }

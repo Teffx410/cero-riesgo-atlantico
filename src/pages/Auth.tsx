@@ -3,6 +3,7 @@ import { data } from '../data'
 import type { User } from '../types'
 import Icon from '../components/Icon'
 import { NAME_MAX, PASSWORD_MAX, PASSWORD_RULES, isValidEmail, isValidPassword } from '../data/validation'
+import Footer from '../components/Footer'
 
 interface Props {
   onDone: (user: User) => void
@@ -68,6 +69,7 @@ export default function Auth({ onDone }: Props) {
   }
 
   return (
+    <>
     <div className="app">
       <div className="hero">
         <div className="logo">
@@ -143,5 +145,7 @@ export default function Auth({ onDone }: Props) {
         </button>
       </form>
     </div>
+    <Footer />
+    </>
   )
 }
