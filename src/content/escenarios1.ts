@@ -1,0 +1,77 @@
+import type { Scenario } from '../types'
+import { q } from './helpers'
+
+export const CASA: Scenario = {
+  id: "casa", order: 1, title: "La cocina",
+  mission: "Revisa la cocina antes de que llegue la familia.",
+  questions: [
+    q("casa-1", "casa", "peligro", "Encuentra el peligro: ¿cuál situación es la más riesgosa?",
+      ["Un ventilador y un aire acondicionado conectados a la misma regleta", "Un cargador de celular enchufado a la pared", "Una lámpara apagada"], 0,
+      "El aire acondicionado debe tener su propia toma. Una regleta sobrecargada se calienta y puede incendiarse."),
+    q("casa-2", "casa", "peligro", "Encuentra el peligro: ¿qué cable de la sala hay que sacar de uso?",
+      ["Un cable nuevo con aislante completo", "Un cable de la nevera con el cobre a la vista", "Un cable ordenado detrás del televisor"], 1,
+      "Un cable pelado deja el conductor expuesto. Se deja de usar y se reemplaza."),
+    q("casa-3", "casa", "decision", "Un tomacorriente está caliente y huele a quemado. ¿Qué haces?",
+      ["Lo sigo usando mientras funcione", "Dejo de usarlo, bajo el breaker si es seguro y llamo a un electricista certificado", "Le echo agua para enfriarlo"], 1,
+      "El calor y el olor a quemado indican falla. No se usa hasta que lo revise un profesional."),
+    q("casa-4", "casa", "decision", "Estás en la cocina con las manos mojadas y vas a enchufar la licuadora. ¿Qué haces?",
+      ["Enchufo con cuidado", "Me seco bien las manos y el piso está seco, luego enchufo", "Enchufo con un trapo en la mano"], 1,
+      "El agua conduce la electricidad. Nunca toques enchufes con manos o piso mojados."),
+    q("casa-5", "casa", "mito", "Mito o realidad: los tomacorrientes sin protección no son peligrosos para niños pequeños.",
+      ["Realidad: se necesita mucha fuerza para recibir una descarga", "Mito: pueden meter objetos y recibir una descarga"], 1,
+      "Los niños exploran con las manos. Usa protectores o tapas en los tomacorrientes libres."),
+    q("casa-6", "casa", "decision", "El breaker se dispara cada vez que enciendes el aire acondicionado. ¿Qué haces?",
+      ["Lo dejo pegado con cinta para que no salte", "Cambio el breaker por uno más grande", "No lo fuerzo: lo reviso con un electricista certificado"], 2,
+      "El breaker es una protección. Anularlo o subirlo de tamaño puede provocar un incendio."),
+  ],
+}
+
+export const BARRIO: Scenario = {
+  id: "barrio", order: 2, title: "El barrio",
+  mission: "Recorre la calle después de la lluvia y detecta los peligros.",
+  questions: [
+    q("barrio-1", "barrio", "decision", "Hay un cable en el suelo junto a un charco. ¿Qué haces?",
+      ["Lo aparto con un palo de madera", "No me acerco, alejo a los demás y aviso al operador de red o al 123", "Paso rápido por el lado"], 1,
+      "Puede estar energizado y el agua amplía el peligro. Mantén la distancia y avisa."),
+    q("barrio-2", "barrio", "decision", "Una cometa quedó enredada en un cable. ¿Qué haces?",
+      ["Halo el hilo hasta soltarla", "Subo al techo a soltarla", "No la halo, me alejo y aviso al operador de red"], 2,
+      "Halar o subir cerca de una red puede causar una descarga. Se avisa al operador."),
+    q("barrio-3", "barrio", "mito", "Mito o realidad: los cables \"colgados\" no hacen daño.",
+      ["Realidad: si ya llevan tiempo ahí, son seguros", "Mito: son ilegales y pueden causar descargas, incendios y muertes"], 1,
+      "Las conexiones ilegales no tienen protecciones y ponen en riesgo a todo el barrio."),
+    q("barrio-4", "barrio", "decision", "Un poste suelta chispas después de la lluvia. ¿Qué haces?",
+      ["Me acerco a ver qué pasa", "Me alejo, mantengo a otros lejos y aviso al operador o al 123", "Le echo agua para apagar las chispas"], 1,
+      "Una falla en un poste puede energizar el suelo cercano. Aléjate y reporta."),
+    q("barrio-5", "barrio", "decision", "Un cable cayó sobre un carro con personas adentro. ¿Qué haces?",
+      ["Les digo que se queden dentro, me mantengo lejos y llamo al 123", "Abro la puerta y los ayudo a salir", "Quito el cable con una escoba"], 0,
+      "Tocar el carro o el cable puede energizarte. Quedarse dentro y esperar ayuda es lo más seguro."),
+    q("barrio-6", "barrio", "mito", "Mito o realidad: si un cable caído no echa chispas, no está energizado.",
+      ["Realidad: sin chispas no hay corriente", "Mito: puede estar energizado sin ninguna señal"], 1,
+      "No se puede saber a simple vista. Todo cable caído se trata como energizado."),
+  ],
+}
+
+export const PLAYA: Scenario = {
+  id: "playa", order: 3, title: "La playa",
+  mission: "Inspecciona un kiosco con instalaciones improvisadas.",
+  questions: [
+    q("playa-1", "playa", "peligro", "Encuentra el peligro: ¿qué instalación del kiosco es la más riesgosa?",
+      ["Una extensión tirada sobre la arena húmeda conectada a las neveras", "Una nevera en un lugar seco", "Una lámpara fija en el techo"], 0,
+      "La humedad y la arena dañan el aislante. Las instalaciones de un kiosco las debe hacer personal certificado."),
+    q("playa-2", "playa", "decision", "Ves una nevera en el piso mojado con el cable dañado. ¿Qué haces?",
+      ["La toco para moverla a un lugar seco", "No la toco, aviso al encargado y que un electricista la revise", "Le echo más agua para limpiarla"], 1,
+      "Tocar un equipo energizado en piso mojado puede causar una descarga grave."),
+    q("playa-3", "playa", "decision", "Se acerca una tormenta eléctrica y estás en el mar. ¿Qué haces?",
+      ["Me quedo, ya estoy mojado", "Salgo del agua y me refugio en un lugar cerrado", "Me refugio bajo una palma"], 1,
+      "El agua y los árboles aislados atraen riesgo. Un lugar cerrado es lo más seguro."),
+    q("playa-4", "playa", "mito", "Mito o realidad: si no está lloviendo donde estoy, no hay peligro de rayos.",
+      ["Realidad: sin lluvia no caen rayos", "Mito: los rayos pueden caer a kilómetros de la tormenta"], 1,
+      "Si oyes truenos, ya estás al alcance de un rayo. Busca refugio."),
+    q("playa-5", "playa", "peligro", "Encuentra el peligro: ¿qué instalación de luces es riesgosa?",
+      ["Luces con empalmes hechos con cinta y cables sueltos", "Luces con cables completos y protegidos", "Luces conectadas a una toma segura"], 0,
+      "Los empalmes improvisados se calientan o se sueltan. Se arreglan con materiales adecuados."),
+    q("playa-6", "playa", "decision", "El parlante del kiosco está conectado con una extensión que pasa por un charco. ¿Qué haces?",
+      ["Lo dejo, los parlantes consumen poco", "Aviso al encargado para que lo reubique y lo revise personal certificado", "Pongo un ladrillo sobre el cable"], 1,
+      "Un cable por un charco puede dar una descarga. Se reubica y se revisa."),
+  ],
+}

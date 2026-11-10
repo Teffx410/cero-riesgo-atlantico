@@ -1,0 +1,77 @@
+import type { Scenario } from '../types'
+import { q } from './helpers'
+
+export const OBRA: Scenario = {
+  id: "obra", order: 4, title: "La obra",
+  mission: "Prepara la jornada de trabajo en una obra cerca de una red eléctrica.",
+  questions: [
+    q("obra-1", "obra", "peligro", "Encuentra el peligro: ¿qué situación es la más riesgosa?",
+      ["Un andamio metálico armado muy cerca de una red de energía", "Un andamio lejos de cualquier red", "Un andamio con barandas"], 0,
+      "El metal conduce la electricidad. Hay que coordinar con el operador antes de trabajar cerca de una red."),
+    q("obra-2", "obra", "decision", "Vas a mover un tubo largo cerca de una línea de energía. ¿Qué haces?",
+      ["Lo muevo con cuidado, sin tocar el cable", "Mantengo la distancia y coordino con el operador de red antes", "Lo muevo rápido para evitar riesgos"], 1,
+      "Un material largo puede tocar o acercarse a la línea. Se planifica con el operador."),
+    q("obra-3", "obra", "decision", "Tu taladro tiene el cable pelado. ¿Qué haces?",
+      ["Lo uso con guantes de cuero", "Lo dejo de usar y lo reporto para repararlo o cambiarlo", "Lo tapo con cinta y sigo"], 1,
+      "Una herramienta con cable dañado puede dar una descarga. No se usa hasta repararla."),
+    q("obra-4", "obra", "decision", "Un compañero sin formación va a conectar el tablero eléctrico. ¿Qué haces?",
+      ["Lo dejo, es solo conectar", "Le digo que pare: lo hace personal calificado y certificado", "Lo ayudo para que termine rápido"], 1,
+      "Las conexiones del tablero las hace personal certificado."),
+    q("obra-5", "obra", "mito", "Mito o realidad: con guantes de cuero ya puedo tocar un cable de la red.",
+      ["Realidad: el cuero aísla bien", "Mito: no protege contra la electricidad de una red"], 1,
+      "Solo el equipo aislante adecuado y el personal calificado pueden trabajar con electricidad."),
+    q("obra-6", "obra", "decision", "Necesitas una escalera cerca de una red. ¿Cuál usas?",
+      ["Una metálica, es más resistente", "Una de fibra de vidrio y manteniendo la distancia de la red", "Cualquiera, mientras no toque el cable"], 1,
+      "Las escaleras metálicas conducen la electricidad. Se usan no conductoras y siempre lejos de la red."),
+  ],
+}
+
+export const FINCA: Scenario = {
+  id: "finca", order: 5, title: "La finca",
+  mission: "Revisa cercas, riego y árboles en una finca.",
+  questions: [
+    q("finca-1", "finca", "decision", "Un árbol toca una línea de energía. ¿Qué haces?",
+      ["Lo podo yo mismo", "No lo toco y pido al operador de red que lo atienda", "Lo empujo con un palo largo"], 1,
+      "Las ramas pueden estar energizadas. Solo el operador o personal autorizado interviene."),
+    q("finca-2", "finca", "decision", "Un cable cayó sobre la cerca de alambre de la finca. ¿Qué haces?",
+      ["Toco la cerca con la mano seca para revisar", "No toco la cerca, alejo a personas y animales y aviso al operador", "Corto el alambre con una cizalla"], 1,
+      "La cerca puede quedar energizada en toda su extensión."),
+    q("finca-3", "finca", "peligro", "Encuentra el peligro: ¿qué situación del riego es riesgosa?",
+      ["Una bomba con cables al descubierto junto a un charco", "Una bomba con instalación cerrada y seca", "Una manguera enrollada"], 0,
+      "Cables al descubierto con agua pueden causar una descarga. Se desenergiza y lo revisa un técnico."),
+    q("finca-4", "finca", "decision", "Estás en campo abierto y caen rayos cerca. ¿Qué haces?",
+      ["Me refugio bajo un árbol solitario", "Busco un refugio cerrado o un vehículo y me alejo de árboles aislados", "Sigo trabajando"], 1,
+      "Los árboles aislados atraen rayos. Un lugar cerrado es lo más seguro."),
+    q("finca-5", "finca", "mito", "Mito o realidad: puedo subir a un árbol junto a la línea para bajar frutas si no toco el cable.",
+      ["Realidad: si no lo toco, no pasa nada", "Mito: la corriente puede pasar por las ramas o saltar al cuerpo"], 1,
+      "No hay que subir a árboles cerca de líneas energizadas."),
+    q("finca-6", "finca", "decision", "Vas a pasar con maquinaria alta o una escalera por debajo de una línea. ¿Qué haces?",
+      ["Paso rápido para no demorarme", "Identifico la altura de la línea, mantengo distancia y consulto al operador si no es seguro", "Paso de noche para que no me vean"], 1,
+      "Maquinaria o escaleras altas pueden tocar la línea. Se planifica antes de pasar."),
+  ],
+}
+
+export const CARNAVAL: Scenario = {
+  id: "carnaval", order: 6, title: "Carnaval y fiestas",
+  mission: "Monta una tarima y un toldo con luces para una fiesta.",
+  questions: [
+    q("carnaval-1", "carnaval", "decision", "La tarima necesita muchos equipos. ¿Cómo se alimentan?",
+      ["Con muchas extensiones conectadas en cadena", "Con una instalación diseñada y hecha por personal certificado", "Con la extensión más larga que haya"], 1,
+      "Las extensiones en cadena se sobrecargan y se calientan."),
+    q("carnaval-2", "carnaval", "peligro", "Encuentra el peligro: ¿qué cableado es riesgoso?",
+      ["Cables por el piso en una zona con charcos y mucha gente", "Cables elevados y protegidos", "Cables dentro de canaletas"], 0,
+      "Los cables en el piso se pisan, se dañan y con humedad pueden dar una descarga."),
+    q("carnaval-3", "carnaval", "decision", "Una guirnalda de luces tiene cables rotos. ¿Qué haces?",
+      ["La uso con cinta aislante", "No la uso y la reemplazo", "La uso solo en la parte alta"], 1,
+      "Las luces dañadas pueden causar descargas o incendios."),
+    q("carnaval-4", "carnaval", "mito", "Mito o realidad: una instalación provisional por unas horas no necesita revisión.",
+      ["Realidad: si es poco tiempo, no hay riesgo", "Mito: también debe revisarla personal certificado"], 1,
+      "El riesgo existe desde el primer minuto. Lo provisional también se revisa."),
+    q("carnaval-5", "carnaval", "peligro", "Encuentra el peligro: ¿qué pasa en el toldo metálico?",
+      ["Los cables de las luces rozan la estructura metálica sin protección", "Los cables van protegidos y separados de la estructura", "El toldo está lejos de las luces"], 0,
+      "Un cable con el aislante dañado puede energizar toda la estructura."),
+    q("carnaval-6", "carnaval", "decision", "Unos niños juegan cerca de los cables de la tarima. ¿Qué haces?",
+      ["Los dejo, los cables están tapados con cinta", "Los alejo, acordono la zona y aviso al organizador", "Les digo que no toquen y sigo con lo mío"], 1,
+      "Se separa a las personas de la instalación y se corrige el riesgo."),
+  ],
+}
